@@ -56,6 +56,16 @@ def create_product(payload: ProductCreate, db: Session = Depends(get_db)):
     return product
 
 
+@router.delete("/products/{product_id}")
+def delete_product(product_id: int, db: Session = Depends(get_db)):
+    product = db.query(Product).filter(Product.id == product_id).first()
+    if product is None:
+        raise HTTPException(status_code=404, detail="Товар не найден")
+    db.delete(product)
+    db.commit()
+    return {"ok": True}
+
+
 @router.patch("/reviews/{review_id}/status")
 def update_review_status(review_id: int, status: str, db: Session = Depends(get_db)):
     if status not in {"published", "hidden"}:
