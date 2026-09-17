@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        // TODO: заменить на реальные фирменные цвета бренда
         brand: {
-          DEFAULT: "#111827",
+          DEFAULT: "#16a34a",
           accent: "#f59e0b",
         },
+        page: "#fdf2f8",
         // TODO: заменить на реальные оттенки уровней лояльности
         tier: {
           bronze: "#b08d57",

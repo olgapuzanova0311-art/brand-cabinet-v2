@@ -30,7 +30,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 function AppLayout({ children }: { children: React.ReactNode }) {
   const { client } = useAuth();
   return (
-    <div className="mx-auto min-h-screen max-w-md bg-gray-50 pb-20">
+    <div className="mx-auto min-h-screen max-w-md bg-page pb-20">
       <div className="px-4 pt-6">{children}</div>
       {client && <BottomNav />}
     </div>
