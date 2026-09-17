@@ -148,6 +148,10 @@ export default function Catalog() {
 
       {loading ? (
         <p className="text-sm text-gray-400">Загрузка...</p>
+      ) : products.length === 0 ? (
+        <p className="mt-6 text-center text-sm text-gray-400">
+          {collection ? "В этой коллекции пока нет товаров" : "Каталог пока пуст — загляните позже"}
+        </p>
       ) : (
         <div className="grid grid-cols-2 gap-3">
           {products.map((product) => (
